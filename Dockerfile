@@ -23,10 +23,6 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /packages
 
-# Create argilla volume
-RUN mkdir -p "$ARGILLA_HOME_PATH"
-VOLUME $ARGILLA_HOME_PATH
-
 # Exposing ports
 EXPOSE 6900
 
