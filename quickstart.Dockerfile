@@ -10,7 +10,6 @@ RUN mkdir /data
 RUN chown -R elasticsearch:elasticsearch /data
 
 COPY scripts/* /
-COPY quickstart.requirements.txt /packages/requirements.txt
 COPY dist/*.whl /packages/
 
 RUN apt update && \
