@@ -1,0 +1,9 @@
+[build]
+builder = "nixpacks"
+buildCommand = "pip install "argilla[server]" datasets"
+
+[deploy]
+startCommand = "docker run -d --name elasticsearch-for-argilla -p 9200:9200 -p 9300:9300 -e "ES_JAVA_OPTS=-Xms512m -Xmx512m" -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch-oss:7.10.2"
+healthcheckPath = "/"
+healthcheckTimeout = 100
+restartPolicyType = "never"
